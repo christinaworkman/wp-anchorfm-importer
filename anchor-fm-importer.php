@@ -12,7 +12,7 @@
 **/
 
 function anchor_fm_importer_custom_post_type() {
-    register_post_type('anchor_fm_importer_episode',
+    register_post_type('anchorfm_episode',
         array(
             'labels'      => array(
                 'name' => __( 'Episodes' , 'anchor-fm-importer' ),
