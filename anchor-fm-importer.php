@@ -11,40 +11,35 @@
 * Text Domain: anchor-fm-importer
 **/
 
-function anchor_fm_importer_register_post_type() {
-
-    // episodes
-
-    $labels = array( 
-        'name' => __( 'Episodes' , 'anchor-fm-importer' ),
-        'singular_name' => __( 'Episode' , 'anchor-fm-importer' ),
-        'add_new' => __( 'New Episode' , 'anchor-fm-importer' ),
-        'add_new_item' => __( 'Add New Episode' , 'anchor-fm-importer' ),
-        'edit_item' => __( 'Edit Episode' , 'anchor-fm-importer' ),
-        'new_item' => __( 'New Episode' , 'anchor-fm-importer' ),
-        'view_item' => __( 'View Episode' , 'anchor-fm-importer' ),
-        'search_items' => __( 'Search Episodes' , 'anchor-fm-importer' ),
-        'not_found' =>  __( 'No Episodes Found' , 'anchor-fm-importer' ),
-        'not_found_in_trash' => __( 'No Episodes found in Trash' , 'anchor-fm-importer' ),
-    );
-
-    $args = array(
-
-        'labels' => $labels,
-        'has_archive' => true,
-        'public' => true,
-        'hierarchical' => false,
-        'supports' => array(
-            'title', 
-            'editor', 
-            'excerpt', 
-            'custom-fields', 
-            'thumbnail',
-            'page-attributes'
-        ),
-        'rewrite'   => array( 'slug' => 'Episodes' ),
-        'show_in_rest' => true
+function anchor_fm_importer_custom_post_type() {
+    register_post_type('anchor_fm_importer_episode',
+        array(
+            'labels'      => array(
+                'name' => __( 'Episodes' , 'anchor-fm-importer' ),
+                'singular_name' => __( 'Episode' , 'anchor-fm-importer' ),
+                'add_new' => __( 'New Episode' , 'anchor-fm-importer' ),
+                'add_new_item' => __( 'Add New Episode' , 'anchor-fm-importer' ),
+                'edit_item' => __( 'Edit Episode' , 'anchor-fm-importer' ),
+                'new_item' => __( 'New Episode' , 'anchor-fm-importer' ),
+                'view_item' => __( 'View Episode' , 'anchor-fm-importer' ),
+                'search_items' => __( 'Search Episodes' , 'anchor-fm-importer' ),
+                'not_found' =>  __( 'No Episodes Found' , 'anchor-fm-importer' ),
+                'not_found_in_trash' => __( 'No Episodes found in Trash' , 'anchor-fm-importer' ),
+                    ),
+                'public'      => true,
+                'has_archive' => true,
+                'hierarchical' => false,
+                'supports' => array(
+                    'title', 
+                    'editor', 
+                    'excerpt', 
+                    'custom-fields', 
+                    'thumbnail',
+                    'page-attributes'
+                ),
+                'rewrite'   => array( 'slug' => 'Episodes' ),
+                'show_in_rest' => true
+               )
     );
 }
-
-add_action( 'init', 'anchor_fm_importer_register_post_type' );
+add_action('init', 'anchor_fm_importer_custom_post_type');
