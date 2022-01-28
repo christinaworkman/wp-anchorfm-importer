@@ -11,6 +11,8 @@
 * Text Domain: anchor-fm-importer
 **/
 
+include( plugin_dir_path( __FILE__ ) . 'includes/rss.php' );
+
 function anchor_fm_importer_custom_post_type() {
     register_post_type('anchorfm_episode',
         array(
