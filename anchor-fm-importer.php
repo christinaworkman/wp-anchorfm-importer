@@ -10,7 +10,6 @@
 * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 * Text Domain: anchor-fm-importer
 **/
-/* test for Allen */
 
 function anchor_fm_importer_custom_post_type() {
     register_post_type('anchorfm_episode',
