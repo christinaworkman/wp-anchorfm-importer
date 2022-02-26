@@ -2,10 +2,10 @@
 include_once( ABSPATH . WPINC . '/feed.php' );
 
 // Create an input variable to hold the RSS URL
-$podcasturl = 'https://anchor.fm/s/cbe7830/podcast/rss';
+$podcastUrl = 'https://anchor.fm/s/cbe7830/podcast/rss';
  
 // Get a SimplePie feed object from the specified feed source.
-$rss = fetch_feed( $podcasturl );
+$rss = fetch_feed( $podcastUrl );
  
 $maxitems = 0;
  
@@ -22,7 +22,7 @@ endif;
  
 <ul>
     <?php if ( $maxitems == 0 ) : ?>
-        <li><?php _e( 'No items', 'anchor-fm-importer' ); ?></li>
+        <li><?php _e( 'No items', 'wp-anchorfm-importer' ); ?></li>
     <?php else : ?>
         <?php // Loop through each feed item and display each item as a hyperlink. ?>
         <?php foreach ( $rss_items as $item ) :
@@ -37,7 +37,7 @@ endif;
             
             <li style="margin-left: 300px">
                 <h2><a href="<?php echo esc_url( $permalink ); ?>"
-                    title="<?php printf( __( 'Posted %s', 'anchor-fm-importer' ), $publishDate ); ?>" 
+                    title="<?php printf( __( 'Posted %s', 'wp-anchorfm-importer' ), $publishDate ); ?>" 
                     episodeID="<?php echo $episodeId?>">
                     <?php echo esc_html( $title ); ?>
                 </a></h2>
