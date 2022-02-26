@@ -13,20 +13,20 @@
 
 include( plugin_dir_path( __FILE__ ) . 'includes/rss.php' );
 
-function anchor_fm_importer_custom_post_type() {
+function wpafmi_custom_post_type() {
     register_post_type('anchorfm_episode',
         array(
             'labels'      => array(
-                'name' => __( 'Episodes' , 'anchor-fm-importer' ),
-                'singular_name' => __( 'Episode' , 'anchor-fm-importer' ),
-                'add_new' => __( 'New Episode' , 'anchor-fm-importer' ),
-                'add_new_item' => __( 'Add New Episode' , 'anchor-fm-importer' ),
-                'edit_item' => __( 'Edit Episode' , 'anchor-fm-importer' ),
-                'new_item' => __( 'New Episode' , 'anchor-fm-importer' ),
-                'view_item' => __( 'View Episode' , 'anchor-fm-importer' ),
-                'search_items' => __( 'Search Episodes' , 'anchor-fm-importer' ),
-                'not_found' =>  __( 'No Episodes Found' , 'anchor-fm-importer' ),
-                'not_found_in_trash' => __( 'No Episodes found in Trash' , 'anchor-fm-importer' ),
+                'name' => __( 'Episodes' , 'wp-anchorfm-importer' ),
+                'singular_name' => __( 'Episode' , 'wp-anchorfm-importer' ),
+                'add_new' => __( 'New Episode' , 'wp-anchorfm-importer' ),
+                'add_new_item' => __( 'Add New Episode' , 'wp-anchorfm-importer' ),
+                'edit_item' => __( 'Edit Episode' , 'wp-anchorfm-importer' ),
+                'new_item' => __( 'New Episode' , 'wp-anchorfm-importer' ),
+                'view_item' => __( 'View Episode' , 'wp-anchorfm-importer' ),
+                'search_items' => __( 'Search Episodes' , 'wp-anchorfm-importer' ),
+                'not_found' =>  __( 'No Episodes Found' , 'wp-anchorfm-importer' ),
+                'not_found_in_trash' => __( 'No Episodes found in Trash' , 'wp-anchorfm-importer' ),
                     ),
                 'public'      => true,
                 'has_archive' => true,
@@ -44,4 +44,4 @@ function anchor_fm_importer_custom_post_type() {
                )
     );
 }
-add_action('init', 'anchor_fm_importer_custom_post_type');
+add_action('init', 'wpafmi_custom_post_type');
