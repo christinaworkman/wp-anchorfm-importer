@@ -45,3 +45,6 @@ function wpafmi_custom_post_type() {
     );
 }
 add_action('init', 'wpafmi_custom_post_type');
+
+require_once( plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/episode-import.php' );
