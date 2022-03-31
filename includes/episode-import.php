@@ -6,7 +6,7 @@
  * if block: use custom anchor block to be made
  * 
  */
-function wpafmi_create_episode() {
+function piafm_create_episode() {
     // Gather post data.
     $my_post = array(
         'post_title'    => 'My post',

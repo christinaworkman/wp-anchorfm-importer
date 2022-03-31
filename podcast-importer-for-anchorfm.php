@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: WP Anchor.fm Importer
+* Plugin Name: Podcast Importer for Anchor.Fm
 * Plugin URI: https://christinaworkman.ca
 * Description: Plugin to import podcast episodes from Anchor.fm.
 * Version: 0.1
@@ -8,25 +8,25 @@
 * Author URI: https://christinaworkman.ca
 * License: GPLv2 or later
 * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
-* Text Domain: wp-anchorfm-importer
+* Text Domain: pod-import-anchorfm
 **/
 
 include( plugin_dir_path( __FILE__ ) . 'includes/rss.php' );
 
-function wpafmi_custom_post_type() {
+function piafm_custom_post_type() {
     register_post_type('anchorfm_episode',
         array(
             'labels'      => array(
-                'name' => __( 'Episodes' , 'wp-anchorfm-importer' ),
-                'singular_name' => __( 'Episode' , 'wp-anchorfm-importer' ),
-                'add_new' => __( 'New Episode' , 'wp-anchorfm-importer' ),
-                'add_new_item' => __( 'Add New Episode' , 'wp-anchorfm-importer' ),
-                'edit_item' => __( 'Edit Episode' , 'wp-anchorfm-importer' ),
-                'new_item' => __( 'New Episode' , 'wp-anchorfm-importer' ),
-                'view_item' => __( 'View Episode' , 'wp-anchorfm-importer' ),
-                'search_items' => __( 'Search Episodes' , 'wp-anchorfm-importer' ),
-                'not_found' =>  __( 'No Episodes Found' , 'wp-anchorfm-importer' ),
-                'not_found_in_trash' => __( 'No Episodes found in Trash' , 'wp-anchorfm-importer' ),
+                'name' => __( 'Episodes' , 'pod-import-anchorfm' ),
+                'singular_name' => __( 'Episode' , 'pod-import-anchorfm' ),
+                'add_new' => __( 'New Episode' , 'pod-import-anchorfm' ),
+                'add_new_item' => __( 'Add New Episode' , 'pod-import-anchorfm' ),
+                'edit_item' => __( 'Edit Episode' , 'pod-import-anchorfm' ),
+                'new_item' => __( 'New Episode' , 'pod-import-anchorfm' ),
+                'view_item' => __( 'View Episode' , 'pod-import-anchorfm' ),
+                'search_items' => __( 'Search Episodes' , 'pod-import-anchorfm' ),
+                'not_found' =>  __( 'No Episodes Found' , 'pod-import-anchorfm' ),
+                'not_found_in_trash' => __( 'No Episodes found in Trash' , 'pod-import-anchorfm' ),
                     ),
                 'public'      => true,
                 'has_archive' => true,
@@ -44,7 +44,7 @@ function wpafmi_custom_post_type() {
                )
     );
 }
-add_action('init', 'wpafmi_custom_post_type');
+add_action('init', 'piafm_custom_post_type');
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/episode-import.php' );
